@@ -2,30 +2,30 @@ import React from "react";
 import "./styles.css";
 import { useState } from "react";
 
-const bookDB = {
-  javascript: [
-    { name: "Eloquent JavaScript", rating: "4/5" },
-    { name: "You Don't Know JS", rating: "3.5/5" }
+const moviesDB = {
+  horror: [
+    { name: "Tumbbad", rating: "8.3/10" },
+    { name: "Bhootnath", rating: "6.3/10" }
   ],
 
-  fiction: [
+  action: [
     {
-      name: "Shiva Trilogy",
-      rating: "5/5"
+      name: "Commando",
+      rating: "6.2/10"
     },
     {
-      name: "Harry Potter and the Sorcerer's Stone",
-      rating: "4.5/5"
+      name: "Kesari",
+      rating: "7.4/10"
     }
   ],
-  business: [
+  comedy: [
     {
-      name: "Never Split the Difference",
-      rating: "3.5/5"
+      name: "Phir Hera Pheri",
+      rating: "7.1/10"
     },
     {
-      name: "Loonshots",
-      rating: "5/5"
+      name: "Welcome",
+      rating: "7/10"
     }
   ]
 };
@@ -37,14 +37,14 @@ export default function App() {
   }
   return (
     <div className="App">
-      <h1> 📚 goodbooks </h1>
+      <h1> ▶ goodmovies </h1>
       <p style={{ fontSize: "smaller" }}>
         {" "}
         Checkout my favorite books. Select a genre to get started{" "}
       </p>
 
       <div>
-        {Object.keys(bookDB).map((genre) => (
+        {Object.keys(moviesDB).map((genre) => (
           <button
             onClick={() => genreClickHandler(genre)}
             style={{
@@ -63,7 +63,7 @@ export default function App() {
       <hr />
       <div style={{ textAlign: "left" }}>
         <ul style={{ paddingInlineStart: "0" }}>
-          {bookDB[selectedGenre].map((book) => (
+          {moviesDB[selectedGenre].map((book) => (
             <li
               key={book.name}
               style={{
