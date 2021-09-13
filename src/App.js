@@ -31,7 +31,7 @@ const moviesDB = {
 };
 
 export default function App() {
-  const [selectedGenre, setGenre] = useState("business");
+  const [selectedGenre, setGenre] = useState("comedy");
   function genreClickHandler(genre) {
     setGenre(genre);
   }
@@ -40,7 +40,7 @@ export default function App() {
       <h1> ▶ goodmovies </h1>
       <p style={{ fontSize: "smaller" }}>
         {" "}
-        Checkout my favorite books. Select a genre to get started{" "}
+        Checkout my favorite movies. Select a genre to get started{" "}
       </p>
 
       <div>
@@ -63,9 +63,9 @@ export default function App() {
       <hr />
       <div style={{ textAlign: "left" }}>
         <ul style={{ paddingInlineStart: "0" }}>
-          {moviesDB[selectedGenre].map((book) => (
+          {moviesDB[selectedGenre].map((movie) => (
             <li
-              key={book.name}
+              key={movie.name}
               style={{
                 listStyle: "none",
                 padding: "1rem",
@@ -76,8 +76,8 @@ export default function App() {
               }}
             >
               {" "}
-              <div style={{ fontSize: "larger" }}> {book.name} </div>
-              <div style={{ fontSize: "smaller" }}> {book.rating} </div>
+              <div style={{ fontSize: "larger" }}> {movie.name} </div>
+              <div style={{ fontSize: "smaller" }}> {movie.rating} </div>
             </li>
           ))}
         </ul>
